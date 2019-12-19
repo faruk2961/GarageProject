@@ -1,3 +1,10 @@
+<?php
+include("conn.php");
+if (isset($_SESSION["user"])){ //check if the variable section has the user
+                               // we have to use isset to make sure that variable exist
+                               //home work make register page,
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +27,14 @@
                       <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Contact</h4>
                         <ul class="list-unstyled">
-                          <li><a href="#" class="text-white">Home</a></li>
-                          <li><a href="#" class="text-white">Register</a></li>
-                          <li><a href="#" class="text-white">LogIn</a></li>
-                          <li><a href="#" class="text-white">Booking</a></li>
-                          <li><a href="#" class="text-white">History</a></li>
-                          <li><a href="#" class="text-white">Review</a></li>
-                          <li><a href="#" class="text-white">Write Review</a></li>
+                          <li><a href="index.php" class="text-white">Home</a></li>
+                          <li><a href="register.php" class="text-white">Register</a></li>
+                          <li><a href="logIn.php" class="text-white">LogIn</a></li>
+                          <li><a href="booking.php" class="text-white">Booking</a></li>
+                          <li><a href="history.php" class="text-white">History</a></li>
+                          <li><a href="review.php" class="text-white">Review</a></li>
+                          <li><a href="write_review.php" class="text-white">Write Review</a></li>
+                          <li><a href="vehicle_register.php" class="text-white">Vehicle Register</a></li>
                         </ul>
                       </div>
                     </div>
@@ -47,23 +55,3 @@
                   </div>
                 </div>
               </header>
-              
-              <img src="assets/image/frontcar2.jpg" class="img-100-size" title="Gas Spring, boot" alt="Alternator">
-              
-              
-   
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        
-        <footer class="footer mt-auto py-3">
-          <div class="container">
-            <span class="text-muted">Place sticky footer content here.</span>
-          </div>
-
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-        </footer>
-</body>
-</html>
