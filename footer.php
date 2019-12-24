@@ -9,9 +9,6 @@
         </footer>
 </body>
 </html>
-<<<<<<< HEAD
 <?
 mysqli_close($conn);
 ?>
-=======
->>>>>>> af10a349cff490978d7ee720ce949810b98f0f0c

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 include("conn.php");
 if (isset($_SESSION["user"])){ //check if the variable section has the user
@@ -6,8 +5,6 @@ if (isset($_SESSION["user"])){ //check if the variable section has the user
                                //home work make register page,
 }
 ?>
-=======
->>>>>>> af10a349cff490978d7ee720ce949810b98f0f0c
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +27,6 @@ if (isset($_SESSION["user"])){ //check if the variable section has the user
                       <div class="col-sm-4 offset-md-1 py-4">
                         <h4 class="text-white">Contact</h4>
                         <ul class="list-unstyled">
-<<<<<<< HEAD
                           <li><a href="index.php" class="text-white">Home</a></li>
                           <li><a href="register.php" class="text-white">Register</a></li>
                           <li><a href="logIn.php" class="text-white">LogIn</a></li>
@@ -39,15 +35,6 @@ if (isset($_SESSION["user"])){ //check if the variable section has the user
                           <li><a href="review.php" class="text-white">Review</a></li>
                           <li><a href="write_review.php" class="text-white">Write Review</a></li>
                           <li><a href="vehicle_register.php" class="text-white">Vehicle Register</a></li>
-=======
-                          <li><a href="#" class="text-white">Home</a></li>
-                          <li><a href="#" class="text-white">Register</a></li>
-                          <li><a href="#" class="text-white">LogIn</a></li>
-                          <li><a href="#" class="text-white">Booking</a></li>
-                          <li><a href="#" class="text-white">History</a></li>
-                          <li><a href="#" class="text-white">Review</a></li>
-                          <li><a href="#" class="text-white">Write Review</a></li>
->>>>>>> af10a349cff490978d7ee720ce949810b98f0f0c
                         </ul>
                       </div>
                     </div>
