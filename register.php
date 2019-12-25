@@ -1,5 +1,22 @@
-<?php
+<?php      //drop down
 include("header.php");
+//$servername = "127.0.0.1";
+//$username = "root";
+//$password = "";
+//$databasename = "garage";
+//$usrtable = "vehicles";
+//$columnname = "make";
+
+$link=mysqli_connect("localhost","root", "");
+//if (!$conn) {
+//  die("Connection failed: " . mysqli_connect_error());
+//}
+
+mysqli_select_db($link,"garage");
+//$query = "SELECT * FROM vehicles ";
+//$result= mysql_query($conn,$query);
+
+
 
 
 ?>
@@ -21,17 +38,42 @@ include("header.php");
     <label for="inputAddress">Phone</label>
     <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
   </div>
-  <div class="form-group col-md-6">
-    <label for="vehicle_type">Vehicle Make</label>
-    <select id="inputState" class="form-control">
-    <input type="text" class="form-control" id="vehicle_type" placeholder="Vehicle Make">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">Vehicle Type</label>
-      <select id="inputVehicleType" class="form-control">
-      <input type="text" class="form-control" id="inputType">
-      <option selected>Choose...</option>
+  
+  <div class="form-group">
+    <table>
+      <tr>
+      <td>Select Make</td>
+      <td><select id="makedd" onChange="change_vehicles_make()">
+        <option>Select</option>
+      <?php
+      $result = mysqli_query($link,"SELECT * FROM vehicles_make");
+      while($row=mysqli_fetch_array($result))
+      {
+        ?>
+    <option value ="<?php echo $row["id"];?>"><?php echo $row["make"]; ?></option>
+        <?php
+      }
+
+      ?>
+      
+      </select>
+     </td>
+     </tr>
+     <tr>
+     <td>Select Model</td>
+     <td>
+       <div id="vehicles_model">
+       <select>
+       <option>Select</option>
+       </select>
+
+    </div>
+    </td>
+     </tr>
+
+      </select>
+      <input type="text" class="form-control" id="inputType"> 
+
      
     </div>
     <div class="form-group col-md-5">
@@ -59,6 +101,17 @@ include("header.php");
   <div class="col-auto my-1">
   <button type="submit" class="btn btn-primary">Sign in</button>
 </form>
+<script type ="text/javascript" >
+function change_vehicles_make()
+{
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.open("GET","ajax.php?vehicles_make="+document.getElementById("makedd").value,false);
+xmlhttp.send(null);
+document.getElementId("vehicles_model").innerHTML=xmlhttp.responseText;
+
+}
+
+</script>
 
 <?php
 include("footer.php");
