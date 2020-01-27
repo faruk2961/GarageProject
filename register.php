@@ -20,30 +20,67 @@ mysqli_select_db($link,"garage");
 
 
 ?>
-<form class="form-signin"action= "register-action.php"method = "POST">
-<div class="col-auto">
-<div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4">
-    </div>
-    <div class="form-group col-md-6">
-    <div class="col-auto">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4">
-    </div>
-  </div>
-  <div class="form-group">
-  <div class="col-auto">
-    <label for="inputAddress">Phone</label>
-    <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
-  </div>
-  
-  <div class="form-group">
-    <table>
-      <tr>
+
+<form action="register-action.php" method="POST">
+<table>
+     <tr>
+      <td>
+          Name:
+      </td>
+      <td>
+      <input type="text" placeholder="Name" name="user" required>
+      </td>
+       </tr>
+       <tr>
+       <td>
+          Password:
+       </td>
+       <td>
+        <input type="Password" placeholder="Password" name="password" required>
+       </td>
+       </tr>
+       <tr>
+         <td>
+          Email:
+        </td>
+        <td>
+          <input type="Email" placeholder="Email" name="email" required>
+        </td>
+       </tr>
+       <tr>
+         <td>
+           Phone no:
+          </td>
+          <td>
+            <select name="phoneCode" required>
+              <option selected hidden value="">Select Code</option>
+              <option value="083">083</option>
+              <option value="083">>086</option>
+              <option value="083">>085</option>
+              <option value="083">>087</option>
+              <option value="083">>089</option>
+              
+          </select>
+           <input type="Phone" placeholder="2984..." name="phone" required>
+          </td>
+          </tr>
+          <tr>
+            <td>
+              Vehicle Type:
+            </td>
+            <td>
+              <select name="vehicletype" required>
+                <option>Car</option>
+                <option>Bus</option>
+                <option>Van</option>
+                <option>Motorcycle</option>
+            </select>
+         
+            </td>
+            </tr>
+            <tr>
       <td>Select Make</td>
-      <td><select id="makedd" onChange="change_vehicles_make()">
+      <td><select name="selectmake" id="makedd" onChange="change_vehicles_make()" required>
         <option>Select</option>
       <?php
       $result = mysqli_query($link,"SELECT * FROM vehicles_make");
@@ -63,7 +100,7 @@ mysqli_select_db($link,"garage");
      <td>Select Model</td>
      <td>
        <div id="vehicles_model">
-       <select>
+       <select name="selectmodel"required>
        <option>Select</option>
        </select>
 
@@ -72,35 +109,42 @@ mysqli_select_db($link,"garage");
      </tr>
 
       </select>
-      <input type="text" class="form-control" id="inputType"> 
+      <tr>
+        <td>
+          Licence:
+      </td>
+      <td>
+        <input type="Licence" placeholder="Licence" name="licence"required>
+    </td>
+    </tr>
+    <tr>
+      <td>
+        Engine Type:
+    </td>
+    <td>
+      <select name="enginetype"required>
+        <option>Dizel</option>
+        <option>Benzin</option>
+        <option>Gas</option>
+        <option>Hibrit</option>
+    </select>
+    </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="Submit" value="Submit" name="">
 
-     
-    </div>
-    <div class="form-group col-md-5">
-    
-      <label for="inputState">Licence</label>
-      <input type="text" class="form-control" id="inputType">
-      
-        
-      </select>
-    </div>
-    <div class="form-group col-md-5">
-      <label for="inputZip">Engine Type</label>
-      <select id="inputEngineType" class="form-control">
-      <input type="text" class="form-control" id="inputEngineType">  
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <div class="col-auto my-1">
-  <button type="submit" class="btn btn-primary">Sign in</button>
+    </td>
+    </tr>
+
+       
+
+
+</table>
 </form>
+
+    
+    
 <script type ="text/javascript" >
 function change_vehicles_make()
 {

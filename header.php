@@ -1,8 +1,10 @@
 <?php
 include("conn.php");
-if (isset($_SESSION["user"])){ //check if the variable section has the user
+//echo $_SESSION['user'];
+if (!isset($_SESSION["user"])){ //check if the variable section has the user
                                // we have to use isset to make sure that variable exist
                                //home work make register page,
+
 }
 ?>
 <!DOCTYPE html>
@@ -28,13 +30,29 @@ if (isset($_SESSION["user"])){ //check if the variable section has the user
                         <h4 class="text-white">Contact</h4>
                         <ul class="list-unstyled">
                           <li><a href="index.php" class="text-white">Home</a></li>
+                          <?php
+                            if (!isset($_SESSION['user'])){ // if the user isn't logged these options should appear
+                          ?>
                           <li><a href="register.php" class="text-white">Register</a></li>
                           <li><a href="logIn.php" class="text-white">LogIn</a></li>
+                          <?php
+                            }else {
+
+                            
+                          ?>
                           <li><a href="booking.php" class="text-white">Booking</a></li>
                           <li><a href="history.php" class="text-white">History</a></li>
                           <li><a href="review.php" class="text-white">Review</a></li>
                           <li><a href="write_review.php" class="text-white">Write Review</a></li>
                           <li><a href="vehicle_register.php" class="text-white">Vehicle Register</a></li>
+                          <li><a href="logout.php" class="text-white">Logout</a></li>
+                          <?php if (isset(($_SESSION['id']))){
+                            if (($_SESSION['id'] = 1){
+                              ?>
+                              <li><a href="dashboard-index.php" class="text-white">Admin</a></li>
+                              <?php
+                            }
+                          } ?>
                         </ul>
                       </div>
                     </div>
